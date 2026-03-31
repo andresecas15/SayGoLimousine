@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Validación de seguridad (por si el HTML5 validation falla)
             if (!pickup || !destination || !date || !time || !vehicle) {
-                alert('Please complete all fields to process your VIP reservation.');
+                alert('Por favor, completa todos los datos para procesar tu reserva VIP.');
                 return;
             }
 
             // Generación del Mensaje Pre-rellenado para WhatsApp según requerimientos
-            const message = `Hello SayGo Limousine, I would like to confirm my reservation. Pickup: ${pickup}, Destination: ${destination}, on ${date} at ${time}. Vehicle: ${vehicle}.`;
+            // "Hola SayGo Limousine, deseo confirmar mi reserva. Recogida en: [Punto], Destino: [Destino], el día [Fecha] a las [Hora]."
+            const message = `Hola SayGo Limousine, deseo confirmar mi reserva. Recogida en: ${pickup}, Destino: ${destination}, el día ${date} a las ${time}. Vehículo: ${vehicle}.`;
             
             // Número de WhatsApp (Formato internacional sin '+' ni espacios, ej: 17861234567 para Miami)
             const whatsappNumber = '17865550000'; // Reemplazar con el número real de SayGo
