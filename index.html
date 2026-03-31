@@ -115,13 +115,17 @@
                 class="w-full h-full object-cover object-[center_top] opacity-70">
             <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+
+            <!-- Lienzo de Partículas 2026 -->
+            <canvas id="luxury-particles"
+                class="absolute inset-0 z-[5] w-full h-full pointer-events-none mix-blend-screen opacity-100"></canvas>
         </div>
 
         <div
             class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <!-- Propuesta de Valor VIP (LSI keywords integradas) -->
-            <div class="lg:col-span-7">
+            <div class="lg:col-span-7 reveal reveal-left">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-500 text-xs tracking-widest uppercase mb-6 drop-shadow">
                     <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
@@ -154,7 +158,7 @@
             </div>
 
             <!-- Widget de Reserva Inteligente -->
-            <div class="lg:col-span-5 relative">
+            <div class="lg:col-span-5 relative reveal reveal-right reveal-delay-1">
                 <!-- Efecto resplandor exterior -->
                 <div
                     class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-yellow-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200">
@@ -179,7 +183,8 @@
                                 <span
                                     class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
                             </div>
-                            <input type="text" id="pickup" required autocomplete="off" placeholder="Pickup (e.g. ATL Airport)"
+                            <input type="text" id="pickup" required autocomplete="off"
+                                placeholder="Pickup (e.g. ATL Airport)"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-9 pr-4 text-white placeholder-gray-400 focus:outline-none focus:border-gold-500 focus:bg-white/10 transition-colors">
                         </div>
 
@@ -190,7 +195,8 @@
                                 <span
                                     class="w-2.5 h-2.5 rounded-full bg-gold-500 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></span>
                             </div>
-                            <input type="text" id="destination" required autocomplete="off" placeholder="Destination (e.g. Buckhead)"
+                            <input type="text" id="destination" required autocomplete="off"
+                                placeholder="Destination (e.g. Buckhead)"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-9 pr-4 text-white placeholder-gray-400 focus:outline-none focus:border-gold-500 focus:bg-white/10 transition-colors">
                         </div>
 
@@ -221,7 +227,8 @@
                             </div>
                             <select id="vehicle" required
                                 class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-4 pr-10 text-white focus:outline-none focus:border-gold-500 focus:bg-white/10 transition-colors appearance-none cursor-pointer">
-                                <option value="" disabled selected class="text-gray-500 bg-dark">Select a VIP vehicle</option>
+                                <option value="" disabled selected class="text-gray-500 bg-dark">Select a VIP vehicle
+                                </option>
                                 <option value="SUV Black" class="bg-dark text-white">SUV Black</option>
                                 <option value="Sedán Luxury" class="bg-dark text-white">Sedán Luxury</option>
                                 <option value="Sprinter Van" class="bg-dark text-white">Sprinter Van Executive</option>
@@ -244,17 +251,19 @@
         </div>
     </header>
 
-    <!-- Sección Nuestros Servicios (Experiencia Inmersiva) -->
     <section id="servicios" class="py-24 bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Texto de Experiencia -->
-            <div class="order-2 lg:order-1 pr-0 lg:pr-10">
-                <span class="text-gold-500 font-semibold tracking-widest uppercase text-xs mb-3 block">Our Services</span>
+            <div class="order-2 lg:order-1 pr-0 lg:pr-10 reveal">
+                <span class="text-gold-500 font-semibold tracking-widest uppercase text-xs mb-3 block">Our
+                    Services</span>
                 <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-8 leading-[1.1]">
                     An Immersive & <span class="gold-gradient-text">Premium Experience</span>
                 </h2>
                 <p class="text-gray-400 mb-8 leading-relaxed text-lg font-light">
-                    Immerse yourself in absolute comfort aboard our versatile and large fleet of luxury SUVs. Designed to offer maximum space and convenience, they are the perfect sanctuary while traveling across our extensive service areas in the Southeast.
+                    Immerse yourself in absolute comfort aboard our versatile and large fleet of luxury SUVs. Designed
+                    to offer maximum space and convenience, they are the perfect sanctuary while traveling across our
+                    extensive service areas in the Southeast.
                 </p>
                 <div class="space-y-4 text-gray-300">
                     <div class="flex items-center gap-3">
@@ -285,7 +294,7 @@
             </div>
 
             <!-- Imagen Interior SUV -->
-            <div class="order-1 lg:order-2 relative">
+            <div class="order-1 lg:order-2 relative reveal reveal-delay-2">
                 <div class="absolute inset-0 bg-gold-500 transform translate-x-3 translate-y-3 rounded-2xl opacity-10">
                 </div>
                 <img src="hero_image.jpeg" alt="Interior premium SUV SayGo Limousine"
@@ -303,7 +312,7 @@
 
         <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <!-- Imagen del Chofer sonriendo con elementos de lujo -->
-            <div class="order-2 lg:order-1 relative p-4 lg:p-0">
+            <div class="order-2 lg:order-1 relative p-4 lg:p-0 reveal reveal-left">
                 <div class="absolute inset-0 bg-gold-500 transform translate-x-3 translate-y-3 rounded-2xl opacity-20">
                 </div>
                 <img src="retrato_chofer.jpeg" alt="Chofer profesional SayGo Limousine"
@@ -346,14 +355,15 @@
             </div>
 
             <!-- Texto de Beneficios de Lujo -->
-            <div class="order-1 lg:order-2 pl-0 lg:pl-10">
+            <div class="order-1 lg:order-2 pl-0 lg:pl-10 reveal reveal-right reveal-delay-1">
                 <span class="text-gold-500 font-semibold tracking-widest uppercase text-xs mb-3 block">Excellence
                     2026</span>
                 <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-8 leading-[1.1]">
                     The Ultimate Standard for <span class="gold-gradient-text">Elite Transport</span>
                 </h2>
                 <p class="text-gray-400 mb-8 leading-relaxed text-lg font-light">
-                    We redefine the concept of <em>Luxury Airport Transfer</em>. Our impeccable fleet and formally dressed
+                    We redefine the concept of <em>Luxury Airport Transfer</em>. Our impeccable fleet and formally
+                    dressed
                     chauffeurs guarantee that every journey is a testament to exclusivity.
                 </p>
                 <div class="space-y-6">
@@ -367,7 +377,8 @@
                         </div>
                         <div>
                             <h3 class="text-white font-semibold text-lg">Absolute Punctuality</h3>
-                            <p class="text-gray-500 text-sm mt-1">Real-time monitoring of flights and traffic conditions.</p>
+                            <p class="text-gray-500 text-sm mt-1">Real-time monitoring of flights and traffic
+                                conditions.</p>
                         </div>
                     </div>
 
@@ -382,7 +393,8 @@
                         </div>
                         <div>
                             <h3 class="text-white font-semibold text-lg">Qualified Chauffeurs</h3>
-                            <p class="text-gray-500 text-sm mt-1">Bilingual professionals with strict etiquette and defensive driving.</p>
+                            <p class="text-gray-500 text-sm mt-1">Bilingual professionals with strict etiquette and
+                                defensive driving.</p>
                         </div>
                     </div>
 
@@ -395,7 +407,8 @@
                         </div>
                         <div>
                             <h3 class="text-white font-semibold text-lg">Unmatched Comfort</h3>
-                            <p class="text-gray-500 text-sm mt-1">On-board amenities and ultimate cabin privacy within our Black SUVs.</p>
+                            <p class="text-gray-500 text-sm mt-1">On-board amenities and ultimate cabin privacy within
+                                our Black SUVs.</p>
                         </div>
                     </div>
                 </div>
@@ -404,22 +417,24 @@
     </section>
 
     <!-- Footer Operativo -->
-    <footer class="bg-black py-12 border-t border-white/5 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-gray-500 text-sm">
+    <footer class="bg-black py-12 border-t border-white/5 relative z-10 overflow-hidden">
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-gray-500 text-sm reveal">
             <!-- Logo & Copyright -->
             <div class="flex flex-col items-center md:items-start gap-3">
                 <img src="loggo.png" alt="SayGo Logo Footer" class="h-12 w-auto grayscale opacity-80"
                     onerror="this.src='';">
                 <p class="text-center md:text-left">&copy; 2026 SayGo Limousine VIP.<br>All Rights Reserved.</p>
             </div>
-            
+
             <div class="text-center">
                 <h4 class="text-white font-medium mb-2 uppercase tracking-wider text-xs">Mailing Address</h4>
                 <p class="leading-relaxed">
                     11585 Jones Bridge Road, Ste 420<br>
                     Johns Creek, GA 30022-7476, United States
                 </p>
-                <p class="text-gold-500 text-xs mt-2 font-medium italic">* Premium chauffeured service arriving at your exact location.</p>
+                <p class="text-gold-500 text-xs mt-2 font-medium italic">* Premium chauffeured service arriving at your
+                    exact location.</p>
                 <p class="text-gray-400 text-xs mt-1">Serving: Atlanta, NC, SC, AL, TN & FL</p>
             </div>
 
@@ -434,21 +449,117 @@
     <!-- Botón Flotante de WhatsApp y Notificación Animada -->
     <div
         class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-[100] flex flex-col items-end gap-3 pointer-events-none">
-        <!-- Notificación Animada -->
-        <div id="wa-notification"
-            class="pointer-events-auto bg-white/10 backdrop-blur-xl border border-white/20 text-white px-5 py-3 rounded-2xl shadow-2xl relative translate-y-4 opacity-0 scale-95 transition-all duration-700 ease-out hidden">
-            <div
-                class="absolute -bottom-[6px] right-6 w-3 h-3 bg-white/10 border-r border-b border-white/20 transform rotate-45 backdrop-blur-xl">
+
+        <!-- Animación Carrito 3D / SUV Lujo -->
+        <div id="wa-3d-car"
+            class="absolute -top-16 right-4 w-48 h-20 pointer-events-none transition-transform ease-out translate-x-[150%] opacity-0 z-[110]">
+            <div class="relative w-full h-full animate-[car-bump_0.6s_infinite_ease-in-out]">
+                <!-- Sombra proyectada -->
+                <div class="absolute bottom-[2px] right-3 w-[120px] h-3 bg-black/60 blur-md rounded-[100%]"></div>
+
+                <!-- SVG Limo/SUV (Clean Premium Flat Illustration) -->
+                <svg viewBox="0 0 240 80" class="w-full h-full drop-shadow-xl scale-x-[-1]">
+                    <!-- Cuerpo Base y Sombra inferior del chasis -->
+                    <path d="M 15 45 C 15 65 20 68 30 68 L 205 68 C 215 68 225 65 228 55 L 230 45 C 228 35 210 25 190 22 C 170 19 150 16 130 16 L 60 16 C 40 16 20 30 15 45 Z" fill="#1C1C1E" stroke="#2C2C2E" stroke-width="1.5" />
+                    
+                    <!-- Linea de carácter (Relieve lateral) -->
+                    <path d="M 18 48 Q 120 45 228 48" fill="none" stroke="#3A3A3C" stroke-width="2" />
+                    
+                    <!-- Cristal Ventanas Envolvente -->
+                    <path d="M 64 19 C 140 19 165 21 175 24 L 185 38 L 32 38 C 25 35 45 19 64 19 Z" fill="#09090B" />
+                    <path d="M 66 21 C 140 21 163 23 172 25 L 180 36 L 35 36 C 30 34 47 21 66 21 Z" fill="#18181B" /> <!-- Brillo Cristal -->
+
+                    <!-- Pilares (Separación de ventanas) -->
+                    <rect x="70" y="19" width="4" height="19" fill="#1C1C1E" transform="skewX(-5)" />
+                    <rect x="115" y="19" width="5" height="19" fill="#1C1C1E" />
+                    <rect x="155" y="21" width="5" height="17" fill="#1C1C1E" transform="skewX(5)" />
+
+                    <!-- Guardabarros -->
+                    <path d="M 32 68 A 20 20 0 0 1 76 68" fill="none" stroke="#09090B" stroke-width="5" />
+                    <path d="M 162 68 A 20 20 0 0 1 206 68" fill="none" stroke="#09090B" stroke-width="5" />
+
+                    <!-- LLANTA TRASERA -->
+                    <g class="origin-[54px_65px] animate-[spin_0.4s_linear_infinite]">
+                        <!-- Neumático -->
+                        <circle cx="54" cy="65" r="16" fill="#111" />
+                        <!-- Rin interior profundo -->
+                        <circle cx="54" cy="65" r="11" fill="#222" />
+                        <!-- Aleación / Rayos (Plata) -->
+                        <g stroke="#9CA3AF" stroke-width="2">
+                            <line x1="54" y1="54" x2="54" y2="76" />
+                            <line x1="43" y1="65" x2="65" y2="65" />
+                            <line x1="46" y1="57" x2="62" y2="73" />
+                            <line x1="46" y1="73" x2="62" y2="57" />
+                        </g>
+                        <!-- Centro del Rin -->
+                        <circle cx="54" cy="65" r="3" fill="#000" stroke="#9CA3AF" stroke-width="1.5" />
+                    </g>
+                
+                    <!-- LLANTA DELANTERA -->
+                    <g class="origin-[184px_65px] animate-[spin_0.4s_linear_infinite]">
+                        <!-- Neumático -->
+                        <circle cx="184" cy="65" r="16" fill="#111" />
+                        <!-- Rin interior profundo -->
+                        <circle cx="184" cy="65" r="11" fill="#222" />
+                        <!-- Aleación / Rayos (Plata) -->
+                        <g stroke="#9CA3AF" stroke-width="2">
+                            <line x1="184" y1="54" x2="184" y2="76" />
+                            <line x1="173" y1="65" x2="195" y2="65" />
+                            <line x1="176" y1="57" x2="192" y2="73" />
+                            <line x1="176" y1="73" x2="192" y2="57" />
+                        </g>
+                        <!-- Centro del Rin -->
+                        <circle cx="184" cy="65" r="3" fill="#000" stroke="#9CA3AF" stroke-width="1.5" />
+                    </g>
+
+                    <!-- Manijas Elegantes -->
+                    <rect x="80" y="45" width="8" height="2.5" rx="1.5" fill="#9CA3AF" />
+                    <rect x="130" y="45" width="8" height="2.5" rx="1.5" fill="#9CA3AF" />
+
+                    <!-- Luz LED Frontal (Afilada) -->
+                    <path d="M 226 46 L 230 46 L 228 50 L 224 50 Z" fill="#FDE047" class="animate-pulse" />
+                    <!-- Haz rápido amarillo cálido -->
+                    <polygon points="228,48 350,20 350,80 226,52" fill="rgba(253, 224, 71, 0.15)" stroke="none" /> 
+
+                    <!-- Luz LED Trasera (Freno Neón) -->
+                    <path d="M 12 44 L 18 44 L 18 52 L 15 52 Z" fill="#EF4444" />
+                    <!-- Brillo de freno -->
+                    <path d="M 5 44 L 18 44 L 18 52 L 5 52 Z" fill="#EF4444" opacity="0.4" class="blur-md" />
+                </svg>
             </div>
-            <p class="font-medium text-[15px] flex items-center gap-3 tracking-wide drop-shadow-md">
-                <span class="relative flex h-3 w-3">
+        </div>
+
+        <!-- Notificación Animada tipo Chat Concierge VIP -->
+        <div id="wa-notification"
+            class="pointer-events-auto bg-[#111111]/95 backdrop-blur-xl border border-gold-500/30 text-white p-2.5 pr-6 rounded-full shadow-[0_10px_40px_rgba(212,175,55,0.15)] relative translate-y-4 opacity-0 scale-95 transition-all duration-700 ease-out hidden flex items-center gap-4 cursor-pointer hover:bg-[#1a1a1a] transition-colors"
+            onclick="window.open('https://wa.me/17865550000', '_blank')">
+
+            <!-- Avatar Chofer VIP -->
+            <div class="relative w-12 h-12 shrink-0">
+                <img src="retrato_chofer.jpeg" alt="SayGo Chauffeur"
+                    class="w-full h-full rounded-full object-cover object-[center_20%] border border-gold-500 shadow-inner">
+                <!-- Punto verde WA -->
+                <span class="absolute bottom-0 right-0 flex h-3.5 w-3.5">
                     <span
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                     <span
-                        class="relative inline-flex rounded-full h-3 w-3 bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
+                        class="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#25D366] border-2 border-[#111]"></span>
                 </span>
-                Need a car right now?
-            </p>
+            </div>
+
+            <!-- Mensaje y Limo SVG -->
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                    <p class="font-bold text-[13px] text-white tracking-wide uppercase">SayGo Concierge</p>
+                    <!-- Icono Pequeño WhatsApp -->
+                    <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.031 0C5.385 0 .002 5.382.002 12.028c0 2.126.554 4.197 1.604 6.01L.002 24l6.096-1.598c1.761.944 3.754 1.442 5.932 1.442h.005c6.643 0 12.025-5.383 12.025-12.029C24.06 5.21 18.675 0 12.031 0zm-.004 21.84h-.005c-1.802 0-3.568-.485-5.114-1.402l-.367-.217-3.8.997.98-3.712-.238-.378C2.42 15.442 1.91 13.771 1.91 12.027c0-5.59 4.549-10.14 10.14-10.14 5.59 0 10.14 4.552 10.14 10.141 0 5.59-4.549 10.14-10.14 10.14h0zm5.492-7.512c-.302-.15-1.782-.879-2.06-.98-.277-.1-.479-.15-.68.15-.202.3-.777.98-.954 1.18-.178.2-.355.225-.657.075-.302-.15-1.272-.47-2.422-1.498-.895-.8-.16-.628-1.5-.75-1.5-.152-.3-1.076-.877-1.378-1.18-.3-.3-.217-.4-.067-.552.176-.388.354-.582.555-.8.151-.15.253-.25.355-.4.1-.15.051-.275 0-.425-.05-.15-.68-1.642-.931-2.25-.246-.593-.497-.512-.68-.521-.176-.008-.378-.01-.58-.01-.202 0-.53.075-.807.375-.277.3-1.057 1.033-1.057 2.517s1.082 2.91 1.233 3.111c.15.2 2.122 3.235 5.14 4.538 2.378 1.025 3.155 1.096 4.095 1.012.984-.087 3.15-.15 3.328-.15.176-.15 1.34-1.49 1.583-2.18.243-.69.243-1.28.17-.18-.087-.378-.225-.68-.375z"></path>
+                    </svg>
+                </div>
+                <p class="font-light text-xs text-gray-300 mt-0.5" id="typer-text">
+                    <span class="animate-pulse italic">typing...</span>
+                </p>
+            </div>
         </div>
 
         <!-- Botón WA -->
