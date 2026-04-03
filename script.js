@@ -1,5 +1,5 @@
-// 0. Inicialización de Autocompletado con OpenStreetMap (Nominatim API)
-function setupOSMAutocomplete(inputId) {
+// 0. Inicialización de Autocompletado con Google Maps (Places API)
+function setupGoogleAutocomplete(inputId) {
     const input = document.getElementById(inputId);
     if (!input) return;
 
@@ -9,6 +9,7 @@ function setupOSMAutocomplete(inputId) {
     input.parentNode.appendChild(dropdown);
 
     let debounceTimer;
+    let autocompleteService;
 
     input.addEventListener('input', function () {
         clearTimeout(debounceTimer);
@@ -19,39 +20,50 @@ function setupOSMAutocomplete(inputId) {
             return;
         }
 
-        // Debounce de 500ms para respetar los límites de la API pública de Nominatim
-        debounceTimer = setTimeout(async () => {
-            try {
-                // Búsqueda en formato JSON restringida a Estados Unidos
-                const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=us&limit=5`);
-                const data = await response.json();
+        debounceTimer = setTimeout(() => {
+            if (!autocompleteService) {
+                if (window.google && window.google.maps && window.google.maps.places) {
+                    autocompleteService = new google.maps.places.AutocompleteService();
+                } else {
+                    console.error("Google Maps API no está cargada o falta places.");
+                    return;
+                }
+            }
 
+            autocompleteService.getPlacePredictions({
+                input: query,
+                componentRestrictions: { country: 'us' }
+            }, (predictions, status) => {
                 dropdown.innerHTML = '';
 
-                if (data.length > 0) {
-                    data.forEach(place => {
+                if (status === google.maps.places.PlacesServiceStatus.OK && predictions && predictions.length > 0) {
+                    predictions.forEach(prediction => {
                         const li = document.createElement('li');
-                        // Extraer solo la parte relevante (nombre principal y ciudad/estado si es posible) o mostrar todo formateado
                         li.className = 'px-4 py-3 hover:bg-gold-500/20 cursor-pointer text-gray-300 hover:text-white transition-colors text-sm border-b border-white/5 last:border-0 flex items-start gap-2';
                         li.innerHTML = `
                             <svg class="w-4 h-4 text-gold-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span class="leading-tight">${place.display_name}</span>
+                            <span class="leading-tight">${prediction.description}</span>
                         `;
 
                         li.addEventListener('click', () => {
-                            input.value = place.display_name;
+                            input.value = prediction.description;
                             dropdown.classList.add('hidden');
                         });
                         dropdown.appendChild(li);
                     });
+                    
+                    // Añadir marca de agua de "Powered by Google" (Por términos de servicio)
+                    const watermark = document.createElement('li');
+                    watermark.className = 'px-4 py-2 text-right bg-[#111] rounded-b-xl border-t border-white/5';
+                    watermark.innerHTML = '<img src="https://developers.google.com/maps/documentation/images/powered_by_google_on_non_white.png" alt="Powered by Google" class="h-3 inline-block opacity-70">';
+                    dropdown.appendChild(watermark);
+
                     dropdown.classList.remove('hidden');
                 } else {
                     dropdown.classList.add('hidden');
                 }
-            } catch (error) {
-                console.error("OSM Autocomplete error:", error);
-            }
-        }, 500);
+            });
+        }, 300);
     });
 
     // Cerrar el menú si se hace clic fuera del input o del dropdown
@@ -64,8 +76,8 @@ function setupOSMAutocomplete(inputId) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializar autocompletado en los campos
-    setupOSMAutocomplete('pickup');
-    setupOSMAutocomplete('destination');
+    setupGoogleAutocomplete('pickup');
+    setupGoogleAutocomplete('destination');
 
     // 1. Lógica del Sistema de Reserva y Redirección a WhatsApp
     const bookingForm = document.getElementById('reservation-form');
